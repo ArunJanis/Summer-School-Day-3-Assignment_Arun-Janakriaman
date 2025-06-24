@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BiteBolt | Food Delivery</title>
+  <style>
+    :root {
+      --primary: #ff4d4f;
+      --secondary: #1e1e1e;
+      --bg: #f9f9f9;
+      --radius: 12px;
+      --shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      --padding: 1.5rem;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--primary);
+      color: white;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar {
+      max-width: 1200px;
+      margin: auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 700;
+      font-style: italic;
+    }
+
+    nav a {
+      color: white;
+      font-weight: 500;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      width: 0%;
+      height: 3px;
+      background: white;
+      position: absolute;
+      bottom: -0px;
+      left: 0;
+      transition: 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    body {
+      padding-top: 70px;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+
+
+
+    .hero {
+      padding: var(--padding);
+      background: url('https://img.freepik.com/premium-photo/background-cooking-set-spices-fresh-vegetables-top-view-free-space-your-text-black-stone-background_187166-56648.jpg?semt=ais_hybrid&w=740') center/cover no-repeat;
+      background-position-y: bottom;
+      color: white;
+      text-align: center;
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background: rgb(191, 188, 188);
+      color: rgb(21, 101, 14);
+      padding: 1rem 2rem;
+      border-radius: var(--radius);
+      margin-top: 2rem;
+      font-weight: bold;
+      font-style: italic;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background: var(--secondary);
+      color: white;
+    }
+
+    .features {
+      display: flex;
+      justify-content: space-around;
+      padding: var(--padding);
+      background: white;
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      margin: 2rem auto;
+      max-width: 1100px;
+    }
+
+    .feature {
+      text-align: center;
+      flex: 1;
+      padding: 1rem;
+    }
+
+    .feature img {
+      width: 60px;
+      margin-bottom: 1rem;
+    }
+
+    .dishes {
+      padding: var(--padding);
+      background: #f9f9f9;
+    }
+
+    .dishes h2 {
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+    }
+
+    .dish-slider {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .dish-track {
+      display: flex;
+      width: fit-content;
+      animation: scroll-left 30s linear infinite;
+      gap: 2rem;
+    }
+
+    .dish-card {
+      flex: 0 0 auto;
+      width: 250px;
+      background: white;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .dish-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      margin-bottom: 0.5rem;
+    }
+
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+
+    footer {
+      text-align: center;
+      padding: var(--padding);
+      background: var(--secondary);
+      color: white;
+      margin-top: 3rem;
+    }
+
+    @media (max-width: 768px) {
+      .features {
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+        .card-grid {
+          flex-direction: column;
+        }
+      }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="navbar">
+      <h1 class="logo">BiteBolt</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Menu</a></li>
+          <li><a href="#">Offers</a></li>
+          <li><a href="#">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+  <section class="hero">
+    <h1>Hungry?</h1>
+    <p>Order your favourite dishes with BiteBolt</p>
+    <a href="#" class="btn">Start Ordering</a>
+  </section>
+
+  <section class="features">
+    <div class="feature">
+      <img src="image 2.png" alt="Fast Delivery" />
+      <h3>Fast Delivery</h3>
+      <p>Under 30 minutes, guaranteed*</p>
+    </div>
+    <div class="feature">
+      <img src="https://img.icons8.com/ios-filled/50/ingredients.png" alt="Fresh Food" />
+      <h3>Fresh Ingredients</h3>
+      <p>Only the best from our partners</p>
+    </div>
+    <div class="feature">
+      <img src="https://img.icons8.com/ios-filled/50/money.png" alt="Best Deals" />
+      <h3>Best Deals</h3>
+      <p>Flat 50% off on first order</p>
+    </div>
+  </section>
+
+  <section class="dishes">
+    <h2>Popular Dishes</h2>
+    <div class="dish-slider">
+      <div class="dish-track">
+
+        <div class="dish-card">
+          <img src="BC.png" alt="Butter Chicken" />
+          <h3>Butter Chicken</h3>
+          <p>Rich, Creamy, Punjabi</p>
+        </div>
+
+        <div class="dish-card">
+          <img src="hcb.png" alt="Biryani" />
+          <h3>Hyderabadi Biryani</h3>
+          <p>Spiced Rice, Chicken, Masala</p>
+        </div>
+
+        <div class="dish-card">
+          <img src="md.png" alt="Masala Dosa" />
+          <h3>Masala Dosa</h3>
+          <p>South Indian, Crispy, Potato Filling</p>
+        </div>
+
+        <div class="dish-card">
+          <img src="pp.png" alt="Pani Puri" />
+          <h3>Pani Puri</h3>
+          <p>Street Food, Spicy, Tangy</p>
+        </div>
+
+        <div class="dish-card">
+          <img src="rj.png" alt="Rogan Josh" />
+          <h3>Rogan Josh</h3>
+          <p>Kashmiri, Mutton, Aromatic</p>
+        </div>
+
+        <div class="dish-card">
+          <img src="gj.png" alt="Gulab Jamun" />
+          <h3>Gulab Jamun</h3>
+          <p>Sweet, Syrupy, Festive</p>
+        </div>
+
+        <div class="dish-card">
+          <img src="BC.png" alt="Butter Chicken" />
+          <h3>Butter Chicken</h3>
+          <p>Rich, Creamy, Punjabi</p>
+        </div>
+
+        <div class="dish-card">
+          <img src="hcb.png" alt="Biryani" />
+          <h3>Hyderabadi Biryani</h3>
+          <p>Spiced Rice, Chicken, Masala</p>
+        </div>
+
+        <div class="dish-card">
+          <img src="md.png" alt="Masala Dosa" />
+          <h3>Masala Dosa</h3>
+          <p>South Indian, Crispy, Potato Filling</p>
+        </div>
+
+        <div class="dish-card">
+          <img src="menucard.png" alt="Menu card image not found">
+          <h3>Click on Menu for more!</h3>
+          <p><a href="#" style="font-style: italic; color: rgb(105, 47, 22);">Open Menu</a></p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <footer>
+    &copy; 2025 BiteBolt. All rights reserved.
+  </footer>
+
+</body>
+
+</html>
